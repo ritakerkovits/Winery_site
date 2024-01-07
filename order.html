@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="author" content="Kerkovits Rita">
+    <meta name="description" content="A MI Pincészetünk kézműves bor oldala">
+    <title>BiaBor Pincészet</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="image/favicon.png" rel="icon" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Cinzel&family=Comfortaa:wght@300&family=Josefin+Sans:wght@200;400&family=Libre+Baskerville&family=Mitr:wght@200&family=Montserrat:wght@100&family=Outfit:wght@100&display=swap" rel="stylesheet">
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-validation-1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="java.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myform").validate({ 
+                rules:{
+                    name: "required",
+                    tel: "required",
+                    email:{
+                        required: true,
+                        mail:true,
+                    },
+                    address: "required",
+                    code: "required",
+                    accept: "required",
+                    
+                },
+                messages:{
+                    name: "*Kérem adja meg a teljes nevét!",
+                    
+                    email: "*Kérem adjon meg egy érvényes E-mail címet!",
+                    address: "*Kérem adja meg a lakcímét!",
+                    code: "*Kérem adja meg az irányítószámát!",
+                    accept: "*Kérem fogadja el a felhasználási feltételeinket!",
+                    
+                },
+            });
+         });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">BiaBor</h1>
+            <ul>
+                <li><a href="index.html">RÓLUNK</a></li>
+                <li><a href="event.html">ESEMÉNYEK</a></li>
+                <li><a href="#">RENDELÉS</a></li>
+                <li><a href="gallery.html">GALÉRIA</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-section">
+        <div class="quote">
+            <p>"Az élet túl rövid ahhoz hogy rossz bort igyunk " </p>
+            <p> - Johann Wolfgang von Goethe</p>
+        </div>
+    </section>  
+    <article class="orderbegin">
+        <p>Célunk hogy az általunk elkészített borokat eljuttassuk minden borszerető társunknak, ezért csapatunkkal bitosítjuk a házilag elkészített boraink kiszállítását, így pár kattintás után már otthonodban kortyolgathatod a kézműves ízekeinket!</p>
+        <p>Készleteink között vendégeink garantáltan találnak kedvükre valót hiszen a prémium minőség mellett megtalálható mind a vörös, a fehér, és a rosé boraink is! </p>
+    </article>
+        <hr>
+    <section class="order-section">
+        <figure class="order-size"> 
+            <img  src="image/order/red.jpg" alt="Vörösbor pohárban ikonkép">
+            <figcaption><a href="#red">Vörösborok</a></figcaption>    
+        </figure>
+
+        <figure class="order-size">
+            <img  src="image/order/white.jpg" alt="Fehérbor pohárban ikonkép">
+            <figcaption><a href="#white">Fehérborok</a></figcaption>
+        </figure>
+
+        <figure class="order-size">
+            <img  src="image/order/rose.jpg" alt="Rosébor pohárban ikonkép">
+            <figcaption><a href="#rose">Roséborok</a></figcaption>               
+        </figure>
+    </section>
+    <hr>
+
+    <form action="http://szamtud.uni-corvinus.hu/~blang/receive.php" method="post" id="myform" novalidate >  
+
+        <h1 class="wine-title"><a id="red">Vörösbor választékunk</a></h1>
+        <section class="order-section">
+            <figure class="order-wine"> 
+                <img  class="wine" src="image/order/vida.jpg" alt="Vida Ölelés Merlot ">
+                <figcaption >
+                    <p>Vida Ölelés Merlot</p>
+                    <p>2.250 Ft.</p>
+                    <input type="number" min="1" max="10" step="1"  id="count-vida" name="count-vida">
+                    <br><br>
+                    <label for="vida">Kosárba</label>
+                    <input type="checkbox" name="vida"  id="vida" >
+                    <br>
+                    <p id="more" onmouseover="vida()" onmouseleave="nonevida()" >Termékinformáció:</p>
+                    <p id="info-vida" ></p>
+                </figcaption> 
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/meszaros.jpg" alt="Mészáros Grandiózus Cabernet Sauvignon">
+                <figcaption>
+                    <p >Mészáros Cabernet Sauvignon </p>
+                    <p >4.190 Ft.</p>
+                    <input type="number" min="1" max="10" step="1"  id="count-meszaros" name="count-meszaros">
+                    <br><br>
+                    <label for="meszaros">Kosárba</label>
+                    <input type="checkbox" name="meszaros" id="meszaros">
+                    <br>
+                    <p id="more" onmouseover="mesz()" onmouseleave="nonemesz()" >Termékinformáció:</p>
+                    <p id="info-mesz" ></p>
+                </figcaption>
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/sauskabor.jpg" alt="Sauska Cuvée 13 2018">
+                <figcaption>
+                    <p >Sauska Cuvée 13 </p>
+                    <p>2.790 Ft. </p>
+                    <input type="number" min="1" max="10" step="1" id="count-sauskabor" name="count-sauskabor">
+                    <br><br>
+                    <label for="sauskabor">Kosárba</label>
+                    <input type="checkbox" name="sauskabor" id="sauskabor" >
+                    <br>
+                    <p id="more" onmouseover="sauskabor()" onmouseleave="nonesauskabor()">Termékinformáció:</p>
+                    <p id="info-sauskabor" ></p>
+                    
+                    
+                </figcaption>               
+            </figure>
+        </section>
+
+        <section class="order-section">
+            <figure class="order-wine">
+                <img class="wine" src="image/order/gere.jpg" alt="Gere Cabernet Sauvignon Barrique 2016">
+                <figcaption>
+                    <p>Cabernet Sauvignon Barrique</p>
+                    <p>4.750 Ft. </p>
+                    <input type="number" min="1" max="10" step="1"  id="count-gere" name="count-gere" name="count-gere">
+                    <br><br>
+                    <label for="gere">Kosárba</label>
+                    <input type="checkbox" name="gere" id="gere">
+                    <br>
+                    <p id="more" onmouseover="gere()" onmouseleave="nonegere()" >Termékinformáció:</p>
+                    <p id="info-gere" ></p>
+                </figcaption>               
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/bonsai.jpg" alt="Vida Bonsai Öregtőkék Kadarkája 2019">
+                <figcaption>
+                    <p >Bonsai Öregtőkék Kadarkája</p>
+                    <p>3.260 Ft. </p>
+                    <input type="number" min="1" max="10" step="1"  id="count-bonsai" name="count-bonsai">
+                    <br><br>
+                    <label for="bonsai">Kosárba</label>
+                    <input type="checkbox" name="bonsai" id="bonsai">
+                    <br>
+                    <p id="more" onmouseover="bonsai()" onmouseleave="nonebonsai()" >Termékinformáció:</p>
+                    <p id="info-bonsai" ></p>
+                </figcaption>               
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/aldas.jpg" alt="St. Andrea Áldás 2019 (Egri Bikavér)">
+                <figcaption>
+                    <p>St. Andrea Áldás</p>
+                    <p>3.750 Ft. </p>
+                    <input type="number" min="1" max="10" step="1" id="count-aldas" name="count-aldas">
+                    <br><br>
+                    <label for="aldas">Kosárba</label>
+                    <input type="checkbox" name="aldas" id="aldas">
+                    <br>
+                    <p id="more" onmouseover="aldas()" onmouseleave="nonealdas()" >Termékinformáció:</p>
+                    <p id="info-aldas" ></p>
+                </figcaption>               
+            </figure>
+        </section>
+
+        <hr>
+
+        <h1 class="wine-title"><a id="white">Fehérbor különlegességek</a></h1>
+        <section class="order-section">
+            <figure class="order-wine">
+                <img class="wine" src="image/order/figu.jpg" alt="Figula Sauvignon Blanc 2020">
+                <figcaption>
+                    <p>Figula Sauvignon Blanc</p>
+                    <p>2.450 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-figu" name="count-figu">
+                    <br><br>
+                    <label for="figu">Kosárba</label>
+                    <input type="checkbox" name="figu" id="figu" >
+                    <br>
+                    <p id="more" onmouseover="figu()" onmouseleave="nonefigu()" >Termékinformáció:</p>
+                    <p id="info-figu" ></p>
+                </figcaption>               
+            </figure>
+            <figure class="order-wine">
+                <img class="wine" src="image/order/szászi.jpg" alt="Szászi Endre Badacsonyi Ottonel Muskotály 2020 BIO">
+                <figcaption>
+                    <p>Szászi Endre Ottonel Muskotály</p>
+                    <p>1.750 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-szaszi" name="count-szaszi">
+                    <br><br>
+                    <label for="szaszi">Kosárba</label>
+                    <input type="checkbox" name="szaszi" id="szaszi"> 
+                    <br>
+                    <p id="more" onmouseover="szaszi()" onmouseleave="noneszaszi()" >Termékinformáció:</p>
+                    <p id="info-szaszi" ></p>
+                </figcaption>               
+            </figure>
+            <figure class="order-wine">
+                <img class="wine" src="image/order/tussock.jpg" alt="Tussock Jumper Sauvignon Blanc 2020">
+                <figcaption>
+                    <p>Tussock Jumper Sauvignon Blanc </p>
+                    <p>3.910 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-tussock" name="count-tussock">
+                    <br><br>
+                    <label for="tussock">Kosárba</label>
+                    <input type="checkbox" name="tussock" id="tussock">
+                    <br>
+                    <p id="more" onmouseover="tussock()" onmouseleave="nonetussock()" >Termékinformáció:</p>
+                    <p id="info-tussock" ></p>
+                </figcaption>               
+            </figure>
+        </section>
+        <section class= "order-section">
+            <figure class="order-wine">
+                <img class="wine" src="image/order/balla.jpg" alt="Balla Géza Királyleányka Kolna 2020">
+                <figcaption>
+                    <p>Balla Géza Királyleányka Kolna </p>
+                    <p>2.410 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-balla" name="count-balla">
+                    <br><br>
+                    <label for="balla">Kosárba</label>
+                    <input type="checkbox" name="balla" id="balla">
+                    <br>
+                    <p id="more" onmouseover="balla()" onmouseleave="noneballa()" >Termékinformáció:</p>
+                    <p id="info-balla" ></p>
+                </figcaption>               
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/laposa.jpg" alt="Laposa Borbirtok Illatos 2021">
+                <figcaption>
+                    <p>Laposa Borbirtok Illatos </p>
+                    <p>1.930 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-laposa" name="count-laposa">
+                    <br><br>
+                    <label for="laposa">Kosárba</label>
+                    <input type="checkbox" name="laposa" id="laposa">
+                    <br>
+                    <p id="more" onmouseover="laposa()" onmouseleave="nonelaposa()" >Termékinformáció:</p>
+                    <p id="info-laposa" ></p>
+                </figcaption>               
+            </figure>
+
+            <figure class="order-wine">
+                <img class="wine" src="image/order/krein.jpg" alt="Kreinbacher Nagy-Somlói Juhfark">
+                <figcaption>
+                    <p>Kreinbacher Nagy-Somlói Juhfark </p>
+                    <p>2.590 Ft.</p>
+                    <input type="number" min="1" max="10" step="1" id="count-krein" name="count-krein" >
+                    <br><br>
+                    <label for="krein">Kosárba</label>
+                    <input type="checkbox" name="krein" id="krein">
+                    <br><br>
+                    <p id="more" onmouseover="krein()" onmouseleave="nonekrein()" >Termékinformáció:</p>
+                    <p id="info-krein" ></p>
+                </figcaption>               
+            </figure>
+        </section>
+    
+        <hr>
+
+        <h1 class="wine-title"><a id = "rose">Roséválogatásaink</a></h1>
+        <section class="order-section">
+        <figure class="order-wine">
+            <img class="wine" src="image/order/ballarose.jpg" alt="Balla Géza Rosé Cuvée Kolna">
+            <figcaption>
+                <p>Balla Géza Rosé Cuvée Kolna</p>
+                <p>2.290 Ft.</p>
+                <input type="number" min="1" max="10" step="1" id="count-ballarose" name="count-ballarose">
+                <br><br>
+                <label for="ballarose">Kosárba</label>
+                <input type="checkbox" name="ballarose" id="ballarose">
+                <br>
+                    <p id="more" onmouseover="ballarose()" onmouseleave="noneballarose()" >Termékinformáció:</p>
+                    <p id="info-ballarose" ></p>
+            </figcaption>               
+        </figure>
+        <figure class="order-wine">
+            <img class="wine" src="image/order/merlot.jpg" alt="Stier Merlot Rosé">
+            <figcaption>
+                <p>Stier Merlot Rosé</p>
+                <p>1.790 Ft</p>
+                <input type="number" min="1" max="10" step="1" id="count-stier" name="count-stier">
+                <br><br>
+                <label for="stier">Kosárba</label>
+                <input type="checkbox" name="stier" id="stier">
+                <br>
+                    <p id="more" onmouseover="stier()" onmouseleave="nonestier()" >Termékinformáció:</p>
+                    <p id="info-stier" ></p>
+            </figcaption>               
+        </figure>
+        <figure class="order-wine">
+            <img class="wine" src="image/order/koch.jpg" alt="Koch Frisch Rosé">
+            <figcaption>
+                <p>Koch Frisch Rosé </p>
+                <p>1.820 Ft</p>
+                <input type="number" min="1" max="10" step="1" id="count-koch" name="count-koch">
+                <br><br>
+                <label for="koch">Kosárba</label>
+                <input type="checkbox" name="koch" id="koch">
+                <br>
+                    <p id="more" onmouseover="koch()" onmouseleave="nonekoch()" >Termékinformáció:</p>
+                    <p id="info-koch"></p>
+            </figcaption>               
+        </figure>
+        </section>
+        <section class="order-section">
+            <figure class="order-wine">
+                <img class="wine" src="image/order/lisicza.jpg" alt="Lisicza Rosé ">
+                <figcaption>
+                    <p>Lisicza Rosé  </p>
+                    <p>1.450 Ft</p>
+                    <input type="number" min="1" max="10" step="1" id="count-lisicza" name="count-lisicza">
+                    <br><br>
+                    <label for="lisicza">Kosárba</label>
+                    <input type="checkbox" name="lisicza" id="lisicza">
+                    <br>
+                        <p id="more" onmouseover="lisicza()" onmouseleave="nonelisicza()" >Termékinformáció:</p>
+                        <p id="info-lisicza" ></p>
+                </figcaption>               
+            </figure>
+            <figure class="order-wine">
+                <img class="wine" src="image/order/sauska.jpg" alt="Sauska Rosé 2020">
+                <figcaption>
+                    <p>Sauska Rosé </p>
+                    <p>2.150 Ft</p>
+                    <input type="number" min="1" max="10" step="1" id="count-sauska" name="count-sauska">
+                    <br><br>
+                    <label for="sauska">Kosárba</label>
+                    <input type="checkbox" name="sauska" id="sauska">
+                    <br>
+                        <p id="more" onmouseover="sauska()" onmouseleave="nonesauska()" >Termékinformáció:</p>
+                        <p id="info-sauska" ></p>
+                </figcaption>               
+            </figure>
+            <figure class="order-wine">
+                <img class="wine" src="image/order/frit.jpg" alt="Frittmann Frisecco rosé gyöngyözőbor">
+                <figcaption>
+                    <p>Frittmann Frisecco gyöngyözőbor  </p>
+                    <p>1.980 Ft</p>
+                    <input type="number" min="1" max="10" step="1" id="count-frit" name="count-frit">
+                    <br><br>
+                    <label for="frit">Kosárba</label>
+                    <input type="checkbox" name="frit" id="frit">
+                    <br>
+                        <p id="more" onmouseover="frit()" onmouseleave="nonefrit()" >Termékinformáció:</p>
+                        <p id="info-frit"></p>
+                </figcaption>               
+            </figure>
+        </section>
+        
+        <article class="order">
+            <h3>Figyelem!</h3> 
+            <p>Termékeinket csak házhozszállítással tudjuk biztosítani így fizetésnél ezt kérjük szíveskedjenek figyelembe venni! </p>
+            <p>A házhozszállítás díja: 1.100 Ft.</p>
+        </article>
+    
+        <div class="pay-section">
+            <input class="sum" type="button" value="Fizetendő összeg" onclick="summon()">
+            <br>
+            <p >A fizetendő összeg már tartalmazza a kiszállítási díjat!</p>  
+            <p id="summon" class="data"></p>  
+            <br>       
+        </div>
+
+        <div class="order-sum">
+            <a href=#pay><input type="button"  value="Tovább a fizetéshez"></a>
+            <input class="sum" type="reset" value="Kosár ürítése" onclick="resetbasket()">
+        </div>
+
+        <hr>
+
+        <section class="pay-section" id="pay">
+            <p class="data">Személyes adatok:</p>
+            <label for="name">Név*:</label>
+            <input type="text" name="name" placeholder="Minta Péter" size="30" id="name">
+            <br><br>
+            <label for="tel">Telefonszám:</label>
+            <input type="tel" name="tel" value="06-" size= "30" id="tel">
+            <br><br>
+            <label for="email">E-mail cím*:</label>
+            <input type="email" name="email" placeholder="mintapeter@minta.hu" size="30" id="email">
+            <br><br>
+            <p class="data">Számlázási adatok:</p>
+            <label for="code">Irányítószám*:</label>
+            <input type="text" name="code" placeholder="1094" size="15"  id="code">
+            <br>
+            <label for="address">Lakcím*</label>
+            <input type="text" name="address" placeholder="Budapest, Bokréta utca 9." size="30" id="address">
+            <br><br>
+
+            <p>A *-al jelölt mezők kitöltése kötelező!</p>
+
+            <br><br>
+            <article class="order">
+            <p class="data">Fizetési mód:</p>
+            <input type="radio" name="pay" value="on">        
+            <label for="pay">Készpénzes fizetés utánvétellel</label>
+            <br><br>
+            <input type="radio" name="pay" value="on"> 
+            <label for="pay">Bankkártyás fizetés előreutalással</label>
+            <br><br>
+            <input type="radio" name="pay" value="on">    
+            <label for="pay">Bankártyás fizetés a helyszínen</label>
+            </article>
+            
+            <br><br>
+
+            <article class="order">
+                <p class="data">Kiszállítás időpontra</p>
+                <p>Amennyiben kedves vendégeink egy kitűzött dátumra szeretnék megrendelni a termékeinket, természetesen erre is van  lehetőség.
+                <p>Ha szeretne élni ezzel a lehetőséggel csak válasszon ki az ön számára a legmegfelelőbb időpontot és mi igyekszünk teljesíteni az igényeket, ezáltal megkönnyíteni az átvételt!</p>  
+                <input type="date" style="width: 35%; margin: auto;">
+            </article>
+            
+            <br><br>
+
+        </section>
+            
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" name="sub" id="sub">
+                    <label for="sub">Szeretnék értesítést kérni a legújabb termékekről és az aktuális hírekről!</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="accept" id="accept">
+                    <label for="accept">Elfogadom az általános szerződési feltételeket!*</label>
+                </td>
+                
+            </tr>
+        </table>
+
+        <br><br>
+        <hr>
+
+        <div class="pay-section">
+            <input type="submit" name="send" value="Rendelés elküldése">
+        </div>
+    </form>
+
+    <footer>
+        <p>A weboldal egy fiktív borászatot mutat be, a közölt adatok nem valósak</p>
+        <p>Készítette: Kerkovits Rita</p>
+        <p>Budapesti Corvinus Egyetem, 2021</p>
+    </footer>
+</body>
+</html>

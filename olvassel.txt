@@ -1,0 +1,28 @@
+Kezdő webfejlesztés projekt
+
+Az oldal készítője: Kerkovits Rita
+
+URL: http://szamtud.uni-corvinus.hu/~b8xy3a
+- a weboldal az iskolai webcím domain cím változása miatt előfordulhat hogy nem elérhető
+
+
+Téma: A weboldalam egy fiktív boros pincészetet mutat be, ahol lehet rendelni is és borkóstolókon is részt venni.
+
+JS kód:
+a kódom a java.js fájlban található
+1. A Rendelés oldalon található borok alatt a "Termékinformáció" felirat fölé húzva az egeret megjelennek az adott borra jellemző leírások
+
+2. Szintén a Rendelés oldalon a kiválasztott borok árát számolja ki a felhasználó számára
+
+Betűtípus: 
+a weboldalon egy kevertbetűtípust használtam aminek az alapja a "Comfortaa", cursive;  
+
+https://fonts.googleapis.com/css2?family=Caudex&family=Cinzel&family=Comfortaa:wght@300&family=Josefin+Sans:wght@200;400&family=Libre+Baskerville&family=Mitr:wght@200&family=Montserrat:wght@100&family=Outfit:wght@100&display=swap 
+
+Új HTML5 formok:
+a Rendelés oldalon a number, email, tel és date elemeket használtam
+
+átvett css formázás:
+a menü címkéinél ha feléjük visszük az egeret akkor jobbról balra kitölti egy másik színnel
+
+https://codepen.io/kay8/pen/azKbjN?fbclid=IwAR1qiDUmr_B5cBz98RHSC1jl6q4Pcw47M1wg1Dez86K5qIKWDJZpVDwqxdU
